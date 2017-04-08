@@ -75,12 +75,6 @@ public class EndangeredAnimalTest {
   }
 
   @Test
-  public void getHealth_returnsHealthAttribute_true() {
-    EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
-    assertEquals("Healthy", testEndangeredAnimal.getHealth());
-  }
-
-  @Test
   public void update_updatesNameAttribute_true() {
     EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
     testEndangeredAnimal.save();
@@ -102,6 +96,14 @@ public class EndangeredAnimalTest {
     testEndangeredAnimal.save();
     testEndangeredAnimal.updateAge("Adult");
     assertEquals("Adult", EndangeredAnimal.find(testEndangeredAnimal.getId()).getAge());
+  }
+
+  @Test
+  public void delete_deletesEndabgeredAnimalFromDatabase_0() {
+    EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
+    testEndangeredAnimal.save();
+    testEndangeredAnimal.delete();
+    assertEquals(0, EndangeredAnimal.all().size());
   }
 
 }
