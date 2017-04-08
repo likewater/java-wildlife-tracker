@@ -16,6 +16,24 @@ public class EndangeredAnimalTest {
   }
 
   @Test
+  public void getName_endangeredAnimalInstantiatesWithName_String() {
+    EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
+    assertEquals("Fox", testEndangeredAnimal.getName());
+  }
+
+  @Test
+  public void getHealth_endangeredAnimalInstantiatesWithHealth_String() {
+    EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
+    assertEquals("Healthy", testEndangeredAnimal.getHealth());
+  }
+
+  @Test
+  public void getAge_endangeredAnimalInstantiatesWithHealth_String() {
+    EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
+    assertEquals("Young", testEndangeredAnimal.getAge());
+  }
+
+  @Test
   public void getHealth_returnsHealthAttribute_true() {
     EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
     assertEquals("Healthy", testEndangeredAnimal.getHealth());
