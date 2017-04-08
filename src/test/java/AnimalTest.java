@@ -10,19 +10,19 @@ public class AnimalTest {
   public DatabaseRule database = new DatabaseRule();
 
   @Test
-  public void animal_instantiatesCorrectly_false() {
+  public void animal_instantiatesCorrectly_True() {
     Animal testAnimal = new Animal("Deer");
     assertEquals(true, testAnimal instanceof Animal);
   }
 
   @Test
-  public void getName_animalInstantiatesWithName_Deer() {
+  public void getName_animalInstantiatesWithName_String() {
     Animal testAnimal = new Animal("Deer");
     assertEquals("Deer", testAnimal.getName());
   }
 
   @Test
-  public void equals_returnsTrueIfNameIsTheSame_false() {
+  public void equals_returnsTrueIfNameIsTheSame_True() {
     Animal firstAnimal = new Animal("Deer");
     Animal anotherAnimal = new Animal("Deer");
     assertTrue(firstAnimal.equals(anotherAnimal));
