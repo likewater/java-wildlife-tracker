@@ -59,7 +59,7 @@ public class EndangeredAnimalTest {
   }
 
   @Test
-  public void find_returnsAnimalWithSameId_secondAnimal() {
+  public void find_returnsEndangeredAnimalWithSameId_secondEndangeredAnimal() {
     EndangeredAnimal firstEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
     firstEndangeredAnimal.save();
     EndangeredAnimal secondEndangeredAnimal = new EndangeredAnimal("Badger", "Okay", "Adult");
@@ -99,11 +99,16 @@ public class EndangeredAnimalTest {
   }
 
   @Test
-  public void delete_deletesEndabgeredAnimalFromDatabase_0() {
+  public void delete_deletesEndangeredAnimalFromDatabase_0() {
     EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
     testEndangeredAnimal.save();
     testEndangeredAnimal.delete();
     assertEquals(0, EndangeredAnimal.all().size());
+  }
+
+  @Test
+  public void find_returnsNullWhenNoEndangeredAnimalFound_null() {
+    assertTrue(EndangeredAnimal.find(999) == null);
   }
 
 }
