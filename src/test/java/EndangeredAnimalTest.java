@@ -28,9 +28,16 @@ public class EndangeredAnimalTest {
   }
 
   @Test
-  public void getAge_endangeredAnimalInstantiatesWithHealth_String() {
+  public void getAge_endangeredAnimalInstantiatesWithAge_String() {
     EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
     assertEquals("Young", testEndangeredAnimal.getAge());
+  }
+
+  @Test
+  public void equals_returnsTrueIfNameHealthAgeIsTheSame_true() {
+    EndangeredAnimal firstEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
+    EndangeredAnimal secondEndangeredAnimal = new EndangeredAnimal("Fox", "Healthy", "Young");
+    assertTrue(firstEndangeredAnimal.equals(secondEndangeredAnimal));
   }
 
   @Test
