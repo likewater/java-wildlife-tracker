@@ -86,7 +86,7 @@ public class Sighting {
   //   }
   // }
 
-  public void updateHealth(String location) {
+  public void updateLocation(String location) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "UPDATE sightings SET location = :location WHERE id = :id;";
       con.createQuery(sql)
@@ -96,7 +96,7 @@ public class Sighting {
     }
   }
 
-  public void updateAge(String ranger_name) {
+  public void updateRangerName(String ranger_name) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "UPDATE sightings SET ranger_name = :ranger_name WHERE id = :id;";
       con.createQuery(sql)

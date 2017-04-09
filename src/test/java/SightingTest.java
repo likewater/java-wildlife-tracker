@@ -97,6 +97,28 @@ public class SightingTest {
   }
 
   @Test
+  public void update_updatesRangerNameAttribute_true() {
+    Animal testAnimal = new Animal("Deer");
+    testAnimal.save();
+    Sighting testSighting = new Sighting (testAnimal.getId(), "45.472428, -121.946466", "Ranger Avery");
+    testSighting.save();
+    testSighting.updateRangerName("Ranger Smith");
+    assertEquals("Ranger Smith", Sighting.find(testSighting.getId()).getRangerName());
+  }
+
+  @Test
+  public void update_updatesLocationAttribute_true() {
+    Animal testAnimal = new Animal("Deer");
+    testAnimal.save();
+    Sighting testSighting = new Sighting (testAnimal.getId(), "45.472428, -121.946466", "Ranger Avery");
+    testSighting.save();
+    testSighting.updateLocation("46.472428, -121.946466");
+    assertEquals("46.472428, -121.946466", Sighting.find(testSighting.getId()).getLocation());
+  }
+
+
+
+  @Test
   public void find_returnsNullWhenNoAnimalFound_null() {
     assertTrue(Animal.find(999) == null);
   }
