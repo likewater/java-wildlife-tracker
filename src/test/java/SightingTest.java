@@ -42,13 +42,6 @@ public class SightingTest {
     assertEquals("Ranger Avery", testSighting.getRangerName());
   }
 
-
-
-
-
-
-
-
   @Test
   public void equals_returnsTrueIfLocationAndDescriptionAreSame_true() {
     Animal testAnimal = new Animal("Deer");
@@ -57,7 +50,7 @@ public class SightingTest {
     Sighting anotherSighting = new Sighting(testAnimal.getId(), "45.472428, -121.946466", "Ranger Avery");
     assertTrue(testSighting.equals(anotherSighting));
   }
-
+//doublecheck relevance of this test below
   @Test
   public void save_insertsObjectIntoDatabase_Sighting() {
     Animal testAnimal = new Animal("Deer");
@@ -92,6 +85,15 @@ public class SightingTest {
     Sighting secondTestSighting = new Sighting (testAnimal.getId(), "45.472428, -121.946466", "Ranger Reese");
     secondTestSighting.save();
     assertEquals(Sighting.find(secondTestSighting.getId()), secondTestSighting);
+  }
+
+  @Test
+  public void save_savesSightingIdIntoDB_true() {
+    Animal testAnimal = new Animal("Deer");
+    testAnimal.save();
+    Sighting testSighting = new Sighting (testAnimal.getId(), "45.472428, -121.946466", "Ranger Avery");
+    testSighting.save();
+    assertEquals(true, Sighting.all().get(0).equals(testSighting));
   }
 
   @Test
