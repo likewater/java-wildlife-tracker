@@ -1,6 +1,7 @@
 import org.sql2o.*;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Animal {
   public String name;

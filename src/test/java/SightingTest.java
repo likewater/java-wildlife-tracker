@@ -1,11 +1,11 @@
 import org.junit.*;
-import org.sql2o.*;
 import static org.junit.Assert.*;
+import org.sql2o.*;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.text.DateFormat;
 import java.util.Date;
+import java.text.DateFormat;
 
 public class SightingTest {
 
@@ -19,6 +19,37 @@ public class SightingTest {
     Sighting testSighting = new Sighting(testAnimal.getId(), "45.472428, -121.946466", "Ranger Avery");
     assertEquals(true, testSighting instanceof Sighting);
   }
+
+  // @Test
+  // public void getAnimalId_sightingInstantiatesWithAnimalId_int() {
+  //   Animal testAnimal = new Animal("Deer");
+  //   testAnimal.save();
+  //   Sighting testSighting = new Sighting(testAnimal.getId(), "45.472428, -121.946466", "Ranger Avery");
+  //   assertEquals(0, testSighting.getAnimalId());
+  // }
+
+  @Test
+  public void getLocation_sightingInstantiatesWithLocation_String() {
+    Animal testAnimal = new Animal("Deer");
+    testAnimal.save();
+    Sighting testSighting = new Sighting(testAnimal.getId(), "45.472428, -121.946466", "Ranger Avery");
+    assertEquals("45.472428, -121.946466", testSighting.getLocation());
+  }
+
+  @Test
+  public void getRangerName_sightingInstantiatesWithRangerName_String() {
+    Animal testAnimal = new Animal("Deer");
+    testAnimal.save();
+    Sighting testSighting = new Sighting(testAnimal.getId(), "45.472428, -121.946466", "Ranger Avery");
+    assertEquals("Ranger Avery", testSighting.getRangerName());
+  }
+
+
+
+
+
+
+
 
   @Test
   public void equals_returnsTrueIfLocationAndDescriptionAreSame_true() {
