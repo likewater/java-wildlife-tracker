@@ -20,13 +20,11 @@ public class SightingTest {
     assertEquals(true, testSighting instanceof Sighting);
   }
 
-  // @Test
-  // public void getAnimalId_sightingInstantiatesWithAnimalId_int() {
-  //   Animal testAnimal = new Animal("Deer");
-  //   testAnimal.save();
-  //   Sighting testSighting = new Sighting(testAnimal.getId(), "45.472428, -121.946466", "Ranger Avery");
-  //   assertEquals(0, testSighting.getAnimalId());
-  // }
+  @Test
+  public void getAnimalId_sightingInstantiatesWithAnimalId_int() {
+    Sighting testSighting = new Sighting(1, "45.472428, -121.946466", "Ranger Avery");
+    assertEquals(1, testSighting.getAnimalId());
+  }
 
   @Test
   public void getLocation_sightingInstantiatesWithLocation_String() {
