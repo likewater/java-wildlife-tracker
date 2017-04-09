@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Animal {
+public class Animal implements AnimalLibraryManagement {
   public String name;
   public int id;
 
@@ -12,10 +12,12 @@ public class Animal {
     this.id = id;
   }
 
+  @Override
   public String getName() {
     return name;
   }
 
+  @Override
   public int getId() {
     return id;
   }

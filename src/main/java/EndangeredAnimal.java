@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class EndangeredAnimal {
+public class EndangeredAnimal implements AnimalLibraryManagement {
   public String name;
   public int id;
   public boolean endangered;
@@ -25,10 +25,12 @@ public class EndangeredAnimal {
     return age;
   }
 
+  @Override
   public String getName() {
     return name;
   }
 
+  @Override
   public int getId() {
     return id;
   }
