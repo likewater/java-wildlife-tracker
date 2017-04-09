@@ -116,7 +116,15 @@ public class SightingTest {
     assertEquals("46.472428, -121.946466", Sighting.find(testSighting.getId()).getLocation());
   }
 
-
+  @Test
+  public void delete_deletesSightingFromDatabase_0() {
+    Animal testAnimal = new Animal("Deer");
+    testAnimal.save();
+    Sighting testSighting = new Sighting (testAnimal.getId(), "45.472428, -121.946466", "Ranger Avery");
+    testSighting.save();
+    testSighting.delete();
+    assertEquals(0, Sighting.all().size());
+  }
 
   @Test
   public void find_returnsNullWhenNoAnimalFound_null() {
