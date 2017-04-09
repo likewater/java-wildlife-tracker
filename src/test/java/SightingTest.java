@@ -4,6 +4,7 @@ import org.sql2o.*;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.text.DateFormat;
 
@@ -124,6 +125,17 @@ public class SightingTest {
     testSighting.save();
     testSighting.delete();
     assertEquals(0, Sighting.all().size());
+  }
+
+  @Test
+  public void save_recordsTimeOfSightingInDatabase() {
+    Animal testAnimal = new Animal("Deer");
+    testAnimal.save();
+    Sighting testSighting = new Sighting (testAnimal.getId(), "45.472428, -121.946466", "Ranger Avery");
+    testSighting.save();
+    Timestamp savedSighting = Sighting.find(testSighting.getId()).getSighted();
+    Timestamp rightNow = new Timestamp(new Date().getTime());
+    assertEquals(rightNow.getDay(), savedSighting.getDay());
   }
 
   @Test
