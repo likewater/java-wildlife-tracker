@@ -151,5 +151,4 @@ public class SightingTest {
   public void find_returnsNullWhenNoAnimalFound_null() {
     assertTrue(Animal.find(999) == null);
   }
-
 }

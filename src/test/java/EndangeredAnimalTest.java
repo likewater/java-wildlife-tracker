@@ -110,5 +110,4 @@ public class EndangeredAnimalTest {
   public void find_returnsNullWhenNoEndangeredAnimalFound_null() {
     assertTrue(EndangeredAnimal.find(999) == null);
   }
-
 }

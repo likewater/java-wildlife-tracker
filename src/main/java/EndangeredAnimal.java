@@ -123,5 +123,4 @@ public class EndangeredAnimal implements AnimalLibraryManagement {
       return sightings;
     }
   }
-
 }

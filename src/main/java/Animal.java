@@ -88,5 +88,4 @@ public class Animal implements AnimalLibraryManagement {
       return sightings;
     }
   }
-
 }
