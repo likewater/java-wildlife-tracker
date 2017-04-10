@@ -1,5 +1,10 @@
 <!--index.vtl-->
-<h1>Report a Wildlife Sighting</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-12"><img class="fsLogo" src= "../forest-service-logo-two.png" style="width:150px;height:150px;" alt="FS Logo">
+    </div>
+  </div>
+<h1>Forest Plot 39 Wildlife Study</h1>
 
 <h3><a href="/animal/new">Add Animal to System</a></h3>
 <hr>
@@ -13,17 +18,14 @@
         <option value="$animal.getId()">$animal.getName()</option>
       #end
     </select>
-
     <label>Location</label>
     <input type="text" name="latLong">
     <label>Your Name</label>
     <input type="text" name="rangerName">
-    <button type="submit">Submit Report</button>
+    <button type="submit" class="btn btn-primary">Submit Report</button>
   #end
 </form>
-
 <hr>
-
 <h3> Report Endangered Animal Sighting </h3>
 <form action="/endangered-sighting" method="post">
   #if($endangeredAnimals.size() >= 0)
@@ -37,7 +39,7 @@
     <input type="text" name="latLong">
     <label>Your Name</label>
     <input type="text" name="rangerName">
-    <button type="submit">Submit Report</button>
+    <button type="submit" class="btn btn-primary">Submit Report</button>
   #end
 </form>
 
@@ -67,4 +69,5 @@
     </a>
   #end
 #end
+</div>
 <!--index.vtl-->

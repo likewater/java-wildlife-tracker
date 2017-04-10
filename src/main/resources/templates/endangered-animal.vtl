@@ -1,4 +1,5 @@
 <!--endangered-animal.vtl-->
+<div class="container">
 <h4><a href="/">Back Home</a></h4>
 <h1><i>Endangered Animal Name: $endangeredAnimal.getName(), Endangered Animal ID: $endangeredAnimal.getId()</i></h1>
 
@@ -8,6 +9,7 @@
   #foreach($sighting in $endangeredAnimal.getSightings())
     <p><b>Sighting ID:</b> $sighting.getId()<p>
     <p><b>Location:</b> $sighting.getLocation()<p>
+    <p><b>Date:</b> $sighting.getSighted()</p>
     <p><b>Health:</b> $endangeredAnimal.getHealth()<p>
     <p><b>Age:</b> $endangeredAnimal.getAge()<p>
     <p><b>Reported by:</b> $sighting.getRangerName()<p>
@@ -15,4 +17,5 @@
     <br>
   #end
 #end
+</div>
 <!--endangered-animal.vtl-->

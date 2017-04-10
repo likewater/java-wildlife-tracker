@@ -1,4 +1,5 @@
 <!--animal.vtl-->
+<div class="container">
 <h4><a href="/">Back Home</a></h4>
 <h1><i>Animal Name: $animal.getName(), Animal ID: $animal.getId()</i></h1>
 
@@ -8,9 +9,11 @@
   #foreach($sighting in $animal.getSightings())
     <p><b>Sighting ID:</b> $sighting.getId()</p>
     <p><b>Location:</b> $sighting.getLocation()</p>
+    <p><b>Date:</b> $sighting.getSighted()</p>
     <p><b>Reported by:</b> $sighting.getRangerName()</p>
     <p><b>Tracking Area:</b> $sighting.getArea()</p>
     <br>
   #end
 #end
+</div>
 <!--animal.vtl-->
