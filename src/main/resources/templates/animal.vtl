@@ -1,15 +1,16 @@
 <!--animal.vtl-->
-<h4><a href="/">Home</a></h4>
-<h1>$animal.getName()</h1>
-<h3>ID: $animal.getId()</h3>
+<h4><a href="/">Back Home</a></h4>
+<h1><i>Animal Name: $animal.getName(), Animal ID: $animal.getId()</i></h1>
 
 #if($animal.getSightings().size() == 0)
   <p>To report a sighting, please visit the <a href="/">home page</a>.</p>
 #else
   #foreach($sighting in $animal.getSightings())
-    Location: $sighting.getLocation()
-    Reported by: $sighting.getRangerName()
-    ID: >$sighting.getId()
+    <p><b>Sighting ID:</b> $sighting.getId()</p>
+    <p><b>Location:</b> $sighting.getLocation()</p>
+    <p><b>Reported by:</b> $sighting.getRangerName()</p>
+    <p><b>Tracking Area:</b> $sighting.getArea()</p>
+    <br>
   #end
 #end
 <!--animal.vtl-->

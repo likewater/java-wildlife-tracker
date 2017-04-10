@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Animal implements AnimalLibraryManagement {
-  public String name;
-  public int id;
+  private String name;
+  private int id;
 
   public Animal(String name) {
     this.name = name;

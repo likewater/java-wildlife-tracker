@@ -12,6 +12,7 @@ public class Sighting {
   private String ranger_name;
   private int id;
   private Timestamp sighted;
+  public static final String AREA = "Plot 39 Wildlife Study";
 
   public Sighting(int animal_id, String location, String ranger_name) {
     this.animal_id = animal_id;
@@ -38,6 +39,10 @@ public class Sighting {
 
   public Timestamp getSighted(){
     return sighted;
+  }
+
+  public String getArea(){
+    return AREA;
   }
 
   @Override

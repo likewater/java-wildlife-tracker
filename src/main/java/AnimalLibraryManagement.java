@@ -1,5 +1,5 @@
 public interface AnimalLibraryManagement {
-  public void getName();
-  public void getId();
+  public String getName();
+  public int getId();
   public boolean equals(Object otherObject);
 }
