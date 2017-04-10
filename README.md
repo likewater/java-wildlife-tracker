@@ -20,7 +20,7 @@ To create the necessary databases, launch postgres, then psql, and run the follo
 OR
 
 * `CREATE DATABASE wildlife_tracker;`
-* `In the terminal run psql wildlife_tracker < wildlife_tracker.sql;`
+* `In the terminal run: psql wildlife_tracker < wildlife_tracker.sql;`
 * `In psql, run this: CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;`
 
 ### License
